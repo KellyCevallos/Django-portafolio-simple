@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{% block content %}
+{% load static %}
+<header class="row bg-black">
+    <div class="col-md-4">
+<img src="{% static 'portfolio/perfil.png' %}" alt="" width="420" height="420">
+
+    </div>
+
+    
+    <div class="col-md-8 my auto">
+        <h1>||||||||||| I AM <strong>KELLY CEVALLOS |||||||||||||||</h1>
+        <h3>Full stack web developer</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec nulla quis nunc congue euismod. Nunc vel tincidunt velit. Fusce laoreet urna eu magna scelerisque, ut blandit libero aliquet. Suspensión potencial. Phasellus eget justo eu nulla malesuada cursus. Quisque a lacinia elit. Etiam eleifend tincidunt justo, eget aliquam libero fermentum sed. 
+            Nulla facilisi. Praesent tristique, mauris quis hendrerit malesuada, erat erat mattis odio, ac consectetur lorem sem vitae felis. Pellentesque eu lacus nec neque dapibus volutpat. Sed eget justo eu massa interdum facilisis.Nullam feugiat tortor id metus vehicula, ut aliquam metus scelerisque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+            Proin et felis sed quam dignissim vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed eu nulla id est auctor
+        </p>
+        <a 
+        href="{% static 'portfolio/cv.pdf' %}" 
+        class="btn btn-primary btn-lg rounded-0 my-3"
+        >Download  cv </a
+        >
+        
+    </div>
+</header>
+<div class="row my-4 text-center">
+    <h1>MY PROJECTS KJCM </h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    
+{%for project in projects%}
+
+<div class="col-md-4 p-4">
+    <div class="card bg-light card project">
+        <img src="{{project.image.url}}" alt="{{project.title}}"class="card img-top" />
+        <div class="card-body">
+            
+        <h2>{{project.title}}</h2> <p>{{project.description}}</p>
+
+        {% if project.url %}
+        <a href="{{project.url}}" class="btn btn-light rounded-0 btn-sm" target="_blank">{{project.url}}</a>
+        
+        {% endif %}
+        </div>    
+    </div>
+</div>
+
+{% endfor %}
+
+{% endblock %}
+</div>
